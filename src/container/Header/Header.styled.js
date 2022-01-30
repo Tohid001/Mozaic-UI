@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const StyledHeader = styled.div`
-  padding: 0 calc(135px);
+  --padding: 0.09375;
+  padding: 0 min(135px, calc(var(--padding) * calc(100vw)));
 
   position: sticky;
   top: 0;
@@ -40,8 +41,10 @@ export const StyledNavListButtonContainer = styled.div`
 `;
 
 export const StyledNavList = styled.ul`
+  /* --widthRatio: 0.14653; */
   display: flex;
   /* gap: 2em; */
+  /* width: min(211px, calc(var(--widthRatio) * calc(100vw))); */
   width: 211px;
   justify-content: space-between;
   list-style: none;
