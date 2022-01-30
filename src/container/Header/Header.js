@@ -1,33 +1,61 @@
-import React from "react";
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 import {
   StyledHeader,
   StyledNavContainer,
   StyledLogo,
   StyledNavListButtonContainer,
+  StyledNavLink,
   StyledNavList,
   StyledConnectButton,
   StyledToggleButton,
   StyledBar,
 } from "./Header.styled";
+
 import Logo from "./logo.png";
+import classes from "./Header.module.css";
 
 function Header() {
   return (
     <StyledHeader>
       <StyledNavContainer>
-        <StyledLogo>
-          <img src={Logo} />
-        </StyledLogo>
+        <NavLink to="/">
+          <StyledLogo>
+            <img src={Logo} />
+          </StyledLogo>
+        </NavLink>
+
         <StyledNavListButtonContainer>
           <StyledNavList>
             <li>
-              <a href="">Products</a>
+              <NavLink
+                to="/products"
+                className={({ isActive }) =>
+                  isActive ? classes.activeclassname : undefined
+                }
+              >
+                <StyledNavLink>Products</StyledNavLink>
+              </NavLink>
             </li>
             <li>
-              <a href="">Stake</a>
+              <NavLink
+                to="/stake"
+                className={({ isActive }) =>
+                  isActive ? classes.activeclassname : undefined
+                }
+              >
+                <StyledNavLink>Stake</StyledNavLink>
+              </NavLink>
             </li>
             <li>
-              <a href="">Vote</a>
+              <NavLink
+                to="/vote"
+                className={({ isActive }) =>
+                  isActive ? classes.activeclassname : undefined
+                }
+              >
+                <StyledNavLink>Vote</StyledNavLink>
+              </NavLink>
             </li>
           </StyledNavList>
           <StyledConnectButton as="a" href="">

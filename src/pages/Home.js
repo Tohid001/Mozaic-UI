@@ -6,6 +6,7 @@ function Home() {
   return (
     <>
       <Header />
+      {/* <p>jjjjjj</p>
       <p>jjjjjj</p>
       <p>jjjjjj</p>
       <p>jjjjjj</p>
@@ -39,8 +40,7 @@ function Home() {
       <p>jjjjjj</p>
       <p>jjjjjj</p>
       <p>jjjjjj</p>
-      <p>jjjjjj</p>
-      <p>jjjjjj</p>
+      <p>jjjjjj</p> */}
       <Outlet />
     </>
   );

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
 export const StyledHeader = styled.div`
   --paddingRatioForBigScreen: 0.09375;
@@ -40,6 +41,20 @@ export const StyledNavListButtonContainer = styled.div`
   flex-grow: 1;
 `;
 
+export const StyledNavLink = styled.span`
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  color: #fff;
+  text-decoration: none;
+  font-size: 24px;
+  line-height: 36px;
+  @media (min-width: 428px) {
+    font-size: 14px;
+    line-height: 21px;
+  }
+`;
+
 export const StyledNavList = styled.ul`
   list-style: none;
   display: flex;
@@ -59,26 +74,17 @@ export const StyledNavList = styled.ul`
       position: absolute;
       bottom: 0;
     }
-    & a {
-      font-family: "Poppins", sans-serif;
-      font-style: normal;
-      font-weight: 400;
-      color: #fff;
-      font-size: 24px;
-      line-height: 36px;
-      @media (min-width: 428px) {
-        font-size: 14px;
-        line-height: 21px;
-      }
-    }
-    &:nth-of-type(1) {
-      & a {
-        font-style: bold;
-        font-weight: 700;
-        color: #ffbb00;
-      }
-    }
+    /* &:nth-of-type(1) ${StyledNavLink} {
+      font-style: bold;
+      font-weight: 700;
+      color: #ffbb00;
+    } */
   }
+  /* & .activeLink {
+    font-style: bold;
+    font-weight: 700;
+    color: #ffbb00;
+  } */
 
   /* --widthRatio: 0.14653; */
   /* width: min(211px, calc(var(--widthRatio) * calc(100vw))); */
