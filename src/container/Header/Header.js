@@ -5,7 +5,7 @@ import {
   StyledNavContainer,
   StyledLogo,
   StyledNavListButtonContainer,
-  StyledNavLink,
+  StyledLink,
   StyledNavList,
   StyledConnectButton,
   StyledToggleButton,
@@ -34,7 +34,7 @@ function Header() {
                   isActive ? classes.activeclassname : undefined
                 }
               >
-                <StyledNavLink>Products</StyledNavLink>
+                <StyledLink>Products</StyledLink>
               </NavLink>
             </li>
             <li>
@@ -44,7 +44,7 @@ function Header() {
                   isActive ? classes.activeclassname : undefined
                 }
               >
-                <StyledNavLink>Stake</StyledNavLink>
+                <StyledLink>Stake</StyledLink>
               </NavLink>
             </li>
             <li>
@@ -54,7 +54,7 @@ function Header() {
                   isActive ? classes.activeclassname : undefined
                 }
               >
-                <StyledNavLink>Vote</StyledNavLink>
+                <StyledLink>Vote</StyledLink>
               </NavLink>
             </li>
           </StyledNavList>

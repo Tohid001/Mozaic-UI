@@ -1,24 +1,21 @@
 import styled from "styled-components";
-import { NavLink } from "react-router-dom";
 
 export const StyledHeader = styled.div`
-  --paddingRatioForBigScreen: 0.09375;
-  padding: 0 24px;
-  position: relative;
-  @media (min-width: 428px) {
-    padding: 0 min(135px, calc(var(--paddingRatioForBigScreen) * calc(100vw)));
-  }
-
   position: sticky;
   top: 0;
   max-width: 100vw;
-
+  padding: 0 24px;
+  position: relative;
   background: radial-gradient(
     100% 22449.71% at 9.72% 0%,
     #332d3d 0%,
     #292530 100%
   );
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  @media (min-width: 1000px) {
+    padding: 0 135px;
+  }
 `;
 
 export const StyledNavContainer = styled.nav`
@@ -41,7 +38,7 @@ export const StyledNavListButtonContainer = styled.div`
   flex-grow: 1;
 `;
 
-export const StyledNavLink = styled.span`
+export const StyledLink = styled.span`
   font-family: "Poppins", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -56,57 +53,51 @@ export const StyledNavLink = styled.span`
 `;
 
 export const StyledNavList = styled.ul`
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
+  display: none;
 
-  @media (min-width: 428px) {
+  @media (min-width: 1000px) {
     flex-wrap: no-wrap;
     width: 211px;
     justify-content: space-between;
     margin-left: auto;
-  }
-
-  & li {
-    @media (max-width: 428px) {
-      text-align: center;
-      flex: 1 100%;
-      position: absolute;
-      bottom: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    & li {
+      @media (max-width: 428px) {
+        text-align: center;
+        flex: 1 100%;
+        position: absolute;
+        bottom: 0;
+      }
     }
-    /* &:nth-of-type(1) ${StyledNavLink} {
-      font-style: bold;
-      font-weight: 700;
-      color: #ffbb00;
-    } */
   }
-  /* & .activeLink {
-    font-style: bold;
-    font-weight: 700;
-    color: #ffbb00;
-  } */
-
-  /* --widthRatio: 0.14653; */
-  /* width: min(211px, calc(var(--widthRatio) * calc(100vw))); */
 `;
 
 export const StyledButtonContainer = styled.div`
   display: flex;
   justify-content: space-between;
+  @media (max-width: 428px) {
+    flex: 1 100%;
+  }
 `;
 
 export const StyledConnectButton = styled.div`
   cursor: pointer;
-  border-radius: 55px;
-  padding: 15px 22px 14px 23px;
+  font-size: 9.5px;
+  line-height: 12px;
+  margin: 16px 14px 16px auto;
+  width: 47px;
+  height: 47px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50.45px;
   font-family: Poppins;
   font-style: normal;
   font-weight: bold;
-  font-size: 14px;
-  line-height: 21px;
   text-align: center;
   color: #292630;
-  margin: 14px 20px 14px 44px;
   background: linear-gradient(95.03deg, #ffbb00 0%, #ff9900 100.65%);
 
   //////Border with gradient and radius///////////
@@ -131,15 +122,35 @@ export const StyledConnectButton = styled.div`
     );
   }
   //////Border with gradient and radius///////////
+
+  @media (min-width: 428px) {
+    width: 144px;
+    height: 45.86px;
+    font-size: 12.8408px;
+    line-height: 19px;
+    margin: 29.83px 16px 29.17px auto;
+  }
+
+  @media (min-width: 1000px) {
+    width: auto;
+    height: auto;
+    border-radius: 55px;
+    padding: 15px 22px 14px 23px;
+    font-size: 14px;
+    line-height: 21px;
+    margin: 14px 20px 14px 44px;
+  }
 `;
 
 export const StyledToggleButton = styled.div`
   cursor: pointer;
   width: 42px;
-  height: 42px;
+  aspect-ratio: 1/1;
   border-radius: 21px;
   background: rgba(45, 44, 51, 1);
-
+  @media (max-width: 320px) {
+    width: 45px;
+  }
   //////Border with gradient and radius///////////
   background-clip: padding-box;
   position: relative;
