@@ -1,17 +1,17 @@
 import styled from "styled-components";
 
 export const StyledHeader = styled.div`
-  --padding: 0.09375;
-  padding: 0 min(135px, calc(var(--padding) * calc(100vw)));
+  --paddingRatioForBigScreen: 0.09375;
+  padding: 0 24px;
+  position: relative;
+  @media (min-width: 428px) {
+    padding: 0 min(135px, calc(var(--paddingRatioForBigScreen) * calc(100vw)));
+  }
 
   position: sticky;
   top: 0;
   max-width: 100vw;
-  /* background: radial-gradient(
-    100% 22449.71% at 9.72% 0%,
-    #332d3d 0%,
-    #292530 100%
-  ); */
+
   background: radial-gradient(
     100% 22449.71% at 9.72% 0%,
     #332d3d 0%,
@@ -41,23 +41,35 @@ export const StyledNavListButtonContainer = styled.div`
 `;
 
 export const StyledNavList = styled.ul`
-  /* --widthRatio: 0.14653; */
-  display: flex;
-  /* gap: 2em; */
-  /* width: min(211px, calc(var(--widthRatio) * calc(100vw))); */
-  width: 211px;
-  justify-content: space-between;
   list-style: none;
-  margin-left: auto;
+  display: flex;
+  flex-wrap: wrap;
+
+  @media (min-width: 428px) {
+    flex-wrap: no-wrap;
+    width: 211px;
+    justify-content: space-between;
+    margin-left: auto;
+  }
 
   & li {
+    @media (max-width: 428px) {
+      text-align: center;
+      flex: 1 100%;
+      position: absolute;
+      bottom: 0;
+    }
     & a {
       font-family: "Poppins", sans-serif;
       font-style: normal;
       font-weight: 400;
-      font-size: 14px;
-      line-height: 21px;
       color: #fff;
+      font-size: 24px;
+      line-height: 36px;
+      @media (min-width: 428px) {
+        font-size: 14px;
+        line-height: 21px;
+      }
     }
     &:nth-of-type(1) {
       & a {
@@ -67,6 +79,9 @@ export const StyledNavList = styled.ul`
       }
     }
   }
+
+  /* --widthRatio: 0.14653; */
+  /* width: min(211px, calc(var(--widthRatio) * calc(100vw))); */
 `;
 
 export const StyledButtonContainer = styled.div`
