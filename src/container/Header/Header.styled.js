@@ -1,11 +1,16 @@
 import styled from "styled-components";
 
 export const StyledHeader = styled.div`
-  padding: 0 135px;
+  padding: 0 calc(135px);
 
   position: sticky;
   top: 0;
   max-width: 100vw;
+  /* background: radial-gradient(
+    100% 22449.71% at 9.72% 0%,
+    #332d3d 0%,
+    #292530 100%
+  ); */
   background: radial-gradient(
     100% 22449.71% at 9.72% 0%,
     #332d3d 0%,
@@ -67,14 +72,8 @@ export const StyledButtonContainer = styled.div`
 `;
 
 export const StyledConnectButton = styled.div`
+  cursor: pointer;
   border-radius: 55px;
-  background: linear-gradient(95.03deg, #ffbb00 0%, #ff9900 100.65%);
-  border: 1px solid;
-  border-image-source: linear-gradient(
-    95.26deg,
-    #ffeeb8 5.57%,
-    rgba(0, 0, 0, 0) 97.7%
-  );
   padding: 15px 22px 14px 23px;
   font-family: Poppins;
   font-style: normal;
@@ -84,17 +83,114 @@ export const StyledConnectButton = styled.div`
   text-align: center;
   color: #292630;
   margin: 14px 20px 14px 44px;
+  background: linear-gradient(95.03deg, #ffbb00 0%, #ff9900 100.65%);
+
+  //////Border with gradient and radius///////////
+  background-clip: padding-box;
+  position: relative;
+  --border: 1px;
+  border: solid var(--border) transparent;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    margin: calc(var(--border) * -1);
+    border-radius: inherit;
+    background: linear-gradient(
+      95.26deg,
+      #ffeeb8 5.57%,
+      rgba(0, 0, 0, 0) 97.7%
+    );
+  }
+  //////Border with gradient and radius///////////
 `;
 
-export const StyledToggleButton = styled.button`
+export const StyledToggleButton = styled.div`
+  cursor: pointer;
   width: 42px;
   height: 42px;
-  background: #2d2c33;
   border-radius: 21px;
-  border: 1px solid;
-  border-image-source: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.34) 0%,
-    rgba(0, 0, 0, 0.17) 100%
-  );
+  background: rgba(45, 44, 51, 1);
+
+  //////Border with gradient and radius///////////
+  background-clip: padding-box;
+  position: relative;
+  --border: 1px;
+  border: solid var(--border) transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    margin: calc(var(--border) * -1);
+    border-radius: inherit;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.34) 0%,
+      rgba(0, 0, 0, 0.17) 100%
+    );
+  }
+  //////Border with gradient and radius///////////
 `;
+
+export const StyledBar = styled.div`
+  background: #ffffff;
+
+  --depth: 2.2px;
+  --gap: calc(var(--depth) + 2.93px);
+  border-radius: 1px;
+  width: 10.89px;
+  height: var(--depth);
+  position: relative;
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    height: var(--depth);
+    background: #ffffff;
+    border-radius: 1px;
+  }
+
+  &:before {
+    width: 14px;
+    transform: translateY(calc(var(--gap) * -1));
+  }
+
+  &:after {
+    width: 7.78px;
+    transform: translateY(calc(var(--gap) * 1));
+  }
+
+  transform: rotateY(180deg);
+`;
+
+// export const StyledBorderWithGradientAndRadius=styled.div`
+// //////Border with gradient and radius///////////
+// background-clip: padding-box;
+//   position: relative;
+//   --border: 1px;
+//   border: solid var(--border) transparent;
+//   &:before {
+//     content: "";
+//     position: absolute;
+//     top: 0;
+//     right: 0;
+//     bottom: 0;
+//     left: 0;
+//     z-index: -1;
+//     margin: calc(var(--border) * -1);
+//     border-radius: inherit;
+//     background: linear-gradient(135deg, rgba(255, 255, 255, 0.34) 0%, rgba(0, 0, 0, 0.17) 100%);
+//   }
+//   //////Border with gradient and radius///////////
+// `

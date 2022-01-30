@@ -7,6 +7,7 @@ import {
   StyledNavList,
   StyledConnectButton,
   StyledToggleButton,
+  StyledBar,
 } from "./Header.styled";
 import Logo from "./logo.png";
 
@@ -29,8 +30,12 @@ function Header() {
               <a href="">Vote</a>
             </li>
           </StyledNavList>
-          <StyledConnectButton>Connect Wallet</StyledConnectButton>
-          <StyledToggleButton></StyledToggleButton>
+          <StyledConnectButton as="a" href="">
+            Connect Wallet
+          </StyledConnectButton>
+          <StyledToggleButton>
+            <StyledBar />
+          </StyledToggleButton>
         </StyledNavListButtonContainer>
       </StyledNavContainer>
     </StyledHeader>
