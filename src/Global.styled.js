@@ -2,13 +2,15 @@ import { createGlobalStyle } from "styled-components";
 
 export const GlobalReset = createGlobalStyle`
 
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;200;500&family=Poppins:wght@400;700&family=Roboto+Slab:wght@600&display=swap');
+
 
  /* Box sizing rules */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+  margin:0;
+  padding:0;
 }
 
 /* Remove default margin */
@@ -34,6 +36,10 @@ dd {
 ul[role="list"],
 ol[role="list"] {
   list-style: none;
+}
+a{
+  text-decoration:none;
+  color:white;
 }
 
 /* Set core root defaults */

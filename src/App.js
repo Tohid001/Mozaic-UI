@@ -2,6 +2,7 @@ import React from "react";
 // import { Header, Footer } from "./container/index";
 import Header from "./container/Header/Header";
 import { GlobalReset } from "./Global.styled";
+import "./App.css";
 
 function App() {
   return (

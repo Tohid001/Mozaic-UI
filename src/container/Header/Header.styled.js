@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const StyledHeader = styled.div`
-  display: grid;
-  place-items: center;
+  padding: 0 135px;
+
   position: sticky;
   top: 0;
   max-width: 100vw;
@@ -16,7 +16,7 @@ export const StyledHeader = styled.div`
 
 export const StyledNavContainer = styled.nav`
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: center;
 `;
 
@@ -28,29 +28,73 @@ export const StyledLogo = styled.div`
   }
 `;
 
-export const StyledList = styled.ul`
+export const StyledNavListButtonContainer = styled.div`
   display: flex;
-  justify-content: space-between;
+  align-items: center;
   flex-grow: 1;
-  margin-left: auto;
+`;
+
+export const StyledNavList = styled.ul`
+  display: flex;
+  /* gap: 2em; */
+  width: 211px;
+  justify-content: space-between;
   list-style: none;
+  margin-left: auto;
 
   & li {
     & a {
-      display: inline-block;
-      font-family: "Fira Sans", sans-serif;
       font-family: "Poppins", sans-serif;
-      font-family: "Roboto Slab", serif;
-      font-size: 14px;
-      line-height: 21px;
-      text-decoration: none;
       font-style: normal;
       font-weight: 400;
+      font-size: 14px;
+      line-height: 21px;
+      color: #fff;
+    }
+    &:nth-of-type(1) {
+      & a {
+        font-style: bold;
+        font-weight: 700;
+        color: #ffbb00;
+      }
     }
   }
 `;
 
-export const StyledLink = styled.li`
-  & a {
-  }
+export const StyledButtonContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+export const StyledConnectButton = styled.div`
+  border-radius: 55px;
+  background: linear-gradient(95.03deg, #ffbb00 0%, #ff9900 100.65%);
+  border: 1px solid;
+  border-image-source: linear-gradient(
+    95.26deg,
+    #ffeeb8 5.57%,
+    rgba(0, 0, 0, 0) 97.7%
+  );
+  padding: 15px 22px 14px 23px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 21px;
+  text-align: center;
+  color: #292630;
+  margin: 14px 20px 14px 44px;
+`;
+
+export const StyledToggleButton = styled.button`
+  width: 42px;
+  height: 42px;
+  background: #2d2c33;
+  border-radius: 21px;
+  border: 1px solid;
+  border-image-source: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.34) 0%,
+    rgba(0, 0, 0, 0.17) 100%
+  );
 `;
